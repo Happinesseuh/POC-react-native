@@ -3,7 +3,7 @@ content-type: application/json
 
 {
   "title": "Test",
-  "content": "Je créer une note"
+  "content": "Je crée une note"
 }
 
 ###
