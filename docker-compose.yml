@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.17
+    networks:
+      - docker-service
+    ports:
+        - 3306:3306
+    env_file:
+      - .env
+    volumes:
+      - ./backend/notesDatabase.sql:/docker-entrypoint-initdb.d/notesDatabase.sql
+
+  node:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment: 
+      MYSQL_HOST: mysql
+    networks:
+      - docker-service
+    depends_on: 
+      - mysql
+
+networks:
+  docker-service:

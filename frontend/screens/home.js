@@ -26,7 +26,6 @@ const NoteCard = ({ note, navigation }) => {
   const [id, setId] = useState(note[0].id)
   const [content, setContent] = useState(note[0].content)
   const [title, setTitle] = useState(note[0].title)
-  console.log(note[0].date)
   return (
   <TouchableOpacity style={ViewNoteStyles.cardNote} onPress={() => {navigation.navigate('Edit note', { title, content, id })}}>
   <Text style={ViewNoteStyles.title}>{note[0].title}</Text>

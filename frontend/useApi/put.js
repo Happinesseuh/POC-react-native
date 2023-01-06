@@ -1,14 +1,15 @@
+import { PORT, ENDPOINT } from 'react-native-dotenv'
+
 function EditNote (note, id) {
     const options = {
       method: 'PUT',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
-       },
+      },
         body: JSON.stringify(note)
       }
-    console.log(`http://10.0.2.2:8080/${id}`, options)
-    return fetch(`http://10.0.2.2:8080/${id}`, options)
+    return fetch(`http://${ENDPOINT}:${PORT}/${id}`, options)
 }
   
   function computeEditNote (note, id) {

@@ -1,14 +1,15 @@
+import { PORT, ENDPOINT } from 'react-native-dotenv'
+
 function createNote (note) {
     const options = {
       method: 'POST',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
-       },
+      },
         body: JSON.stringify(note)
       }
-      console.log(`http://10.0.2.2:8080/`, options)
-      return fetch('http://10.0.2.2:8080/', options)
+      return fetch(`http://${ENDPOINT}:${PORT}/`, options)
     }
   
   function computeCreateNote (note) {

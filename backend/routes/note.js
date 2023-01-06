@@ -3,7 +3,7 @@ const db_con = require('../configs/db');
 
 router
     //view all notes
-.get('/', (req, res, next) => {
+.get('/', async (req, res, next) => {
     db_con.query(`select * from note;`, function (err, result, fields) {
         if (err) {
             next(err);
@@ -16,8 +16,7 @@ router
 })
 
     //create a note
-.post('/', (req, res, next) => {
-    console.log('req body = ', req.body);
+.post('/', async(req, res, next) => {
     db_con.query(`insert into note (title, content) values ("${req.body.title}", "${req.body.content}");`, function (err, result) {
         if (err) {
             next(err);
@@ -31,7 +30,7 @@ router
 })
 
     //update a note
-.put('/:id', (req, res, next) => {
+.put('/:id', async(req, res, next) => {
         db_con.query(`UPDATE note
             SET
                 title="${req.body.title}",
@@ -47,7 +46,7 @@ router
         });
     })
     //delete a note
-    .delete('/:id', (req, res, next) => {
+    .delete('/:id', async(req, res, next) => {
         db_con.query(`DELETE FROM note WHERE id = ${req.params.id};`, function (err, result, fields) {
             if (err)
                 next(err);
