@@ -9,8 +9,8 @@ function notesToArrayForCards(res) {
                 date: res[i].modified_date},
                 i])
         }
-        titles.sort(function(a, b) {
-            return new Date(a.date) - new Date(b.date);
+        titles.sort(function compare(a, b) {
+            return new Date(a[0].date) - new Date(b[0].date);
         });
         titles.reverse()
     }
