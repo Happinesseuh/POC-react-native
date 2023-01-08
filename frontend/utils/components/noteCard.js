@@ -23,7 +23,7 @@ const NoteCard = ({ note, setRes, res, navigation}) => {
     <TouchableOpacity style={viewNotesStyles.cardNote} onPress={() => {navigation.navigate('Edit note',
         { title, content, id, setRes, res})}}>
         <Text style={viewNotesStyles.title}>{title}</Text>
-        <Text style={viewNotesStyles.dateText}>{date}</Text>
+        <Text style={viewNotesStyles.dateText}>{date.split('T').join('  ').replace('.000Z', '')}</Text>
         <TouchableOpacity style={viewNotesStyles.crossButton}
             onPress={() =>
                 Alert.alert(
