@@ -1,5 +1,5 @@
-import { ViewNoteScreen } from './screens/home';
-import { EditNoteScreen } from './screens/editNote';
+import { ViewNoteScreen } from './screens/viewNotes';
+import { EditNoteScreen } from './screens/editNotes';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";

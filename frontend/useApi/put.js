@@ -17,6 +17,7 @@ function EditNote (note, id) {
       if (!res.ok) { throw Error('error : ', res.error) }
       return res.json()
     }).then((userNotes) => {
+      console.log(userNotes)
       return userNotes
     })
   }

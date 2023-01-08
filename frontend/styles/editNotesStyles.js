@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-const EditNoteStyles = StyleSheet.create({
+const EditNotesStyles = StyleSheet.create({
     container: {
     flex: 1,
     justifyContent: 'center',
@@ -61,4 +61,4 @@ const EditNoteStyles = StyleSheet.create({
     }
   })
 
-export {EditNoteStyles}
+export {EditNotesStyles}
