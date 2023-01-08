@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import {  Text, TouchableOpacity, ScrollView, TextInput } from 'react-native'
+import {  Text, TouchableOpacity, ScrollView, TextInput, LogBox } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { EditNotesStyles } from '../styles/editNotesStyles'
@@ -10,6 +10,10 @@ import { computeGetNotes } from '../useApi/get'
 import { computeEditNote } from '../useApi/put'
 
 import { getIndexNoteFromId } from '../utils/functions/getIndexNoteFromId'
+
+LogBox.ignoreLogs([
+  'Non-serializable values were found in the navigation state',
+]);
 
 const EditNoteScreen = ({ route }) => {
   const scrollViewRef = useRef()
