@@ -1,5 +1,4 @@
-# Test-Technique-Smart-X
-
+# POC react native
 ## Installation
 
 Clone the repository, then run the following commands:
